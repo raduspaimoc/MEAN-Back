@@ -61,10 +61,10 @@ export class PostsService {
       .subscribe(response => {
         const updatedPosts = [...this.posts];
         const oldPostIndex = updatedPosts.findIndex(p => p.id === post.id);
-        /*updatedPosts[oldPostIndex] = post;
+        updatedPosts[oldPostIndex] = post;
         this.posts = updatedPosts;
         this.postsUpdated.next([...this.posts]);
-        this.router.navigate(["/"]);*/
+        //this.router.navigate(["/"]);
       });
   }
 
