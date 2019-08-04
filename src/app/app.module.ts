@@ -11,6 +11,7 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatExpansionModule,
+  MatProgressSpinnerModule,
   MatToolbarModule
 } from '@angular/material';
 
@@ -41,6 +42,7 @@ import { AppRoutingModule } from './app-routing.modue';
     MatInputModule,
     MatExpansionModule,
     HttpClientModule,
+    MatProgressSpinnerModule,
     MatToolbarModule
   ],
   providers: [],
