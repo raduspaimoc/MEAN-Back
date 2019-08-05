@@ -27,27 +27,36 @@ export class PostCreatComponent implements OnInit{
 
   ngOnInit() {
     this.form = new FormGroup({
-      'title': new FormControl(null, {
+      title: new FormControl(null, {
         validators: [Validators.required, Validators.minLength(3)]
       }),
-      'content': new FormControl(null, {validators: [Validators.required]}),
-      'image': new FormControl(null, {validators: [Validators.required], asyncValidators: mimeType})
+      content: new FormControl(null, { validators: [Validators.required] }),
+      image: new FormControl(null, {
+        validators: [Validators.required],
+        asyncValidators: [mimeType]
+      })
     });
-
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
-      if (paramMap.has('postId')){
-        this.mode = 'edit';
-        this.postId = paramMap.get('postId');
+      if (paramMap.has("postId")) {
+        this.mode = "edit";
+        this.postId = paramMap.get("postId");
         this.isLoading = true;
-        this.postsService.getPost(this.postId).subscribe(postData => { 
-          this.isLoading = true;         
-          this.post = {id: postData._id, title: postData.title, content: postData.content, imagePath: null};
-        });
-        this.form.setValue(
-          {'title': this.post.title, 'content': this.post.content
+        this.postsService.getPost(this.postId).subscribe(postData => {
+          this.isLoading = false;
+          this.post = {
+            id: postData._id,
+            title: postData.title,
+            content: postData.content,
+            imagePath: postData.imagePath
+          };
+          this.form.setValue({
+            title: this.post.title,
+            content: this.post.content,
+            image: this.post.imagePath
+          });
         });
       } else {
-        this.mode = 'create';
+        this.mode = "create";
         this.postId = null;
       }
     });
@@ -80,7 +89,8 @@ export class PostCreatComponent implements OnInit{
       this.postsService.updatePost(
         this.postId,
         this.form.value.title,
-        this.form.value.content
+        this.form.value.content,
+        this.form.value.image
       );
     }
     this.form.reset();
