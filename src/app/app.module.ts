@@ -23,6 +23,7 @@ import { PostListComponent } from './posts/post-list/post-list.component';
 import { PostsService } from './posts/posts.service';
 import { AppRoutingModule } from './app-routing.modue';
 import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { LoginComponent } from './auth/login/login.component';
     PostCreatComponent,
     PostListComponent,
     LoginComponent,
+    SignupComponent,
     HeaderComponent
   ],
   imports: [
