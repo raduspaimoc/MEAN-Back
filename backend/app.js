@@ -10,7 +10,7 @@ const app = express();
 
 mongoose
   .connect(
-    "mongodb+srv://raduspaimoc:12qwaszx@cluster0-p9igq.mongodb.net/test?retryWrites=true&w=majority"
+    "mongodb+srv://raduspaimoc:12qwaszx@cluster0-p9igq.mongodb.net/test?w=majority"
   )
   .then(() => {
     console.log("Connected to database!");
