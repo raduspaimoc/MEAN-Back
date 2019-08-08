@@ -13,7 +13,8 @@ import {
   MatExpansionModule,
   MatProgressSpinnerModule,
   MatPaginatorModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatDialogModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -26,6 +27,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { ErrorInterceptor } from './error-interceptor';
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -36,6 +38,7 @@ import { ErrorInterceptor } from './error-interceptor';
     PostListComponent,
     LoginComponent,
     SignupComponent,
+    ErrorComponent,
     HeaderComponent
   ],
   imports: [
@@ -54,6 +57,7 @@ import { ErrorInterceptor } from './error-interceptor';
     HttpClientModule,
     MatProgressSpinnerModule,
     MatPaginatorModule,
+    MatDialogModule,
     MatToolbarModule
   ],
   providers: [
@@ -61,6 +65,7 @@ import { ErrorInterceptor } from './error-interceptor';
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
 
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ErrorComponent]
 })
 export class AppModule { }
