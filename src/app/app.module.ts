@@ -3,19 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import {
-  MatButtonModule,
-  MatCheckboxModule,
-  MatCardModule,
-  MatTableModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatExpansionModule,
-  MatProgressSpinnerModule,
-  MatPaginatorModule,
-  MatToolbarModule,
-  MatDialogModule
-} from '@angular/material';
+
 
 import { AppComponent } from './app.component';
 import { PostCreatComponent } from './posts/post-create/post-create.component';
@@ -28,6 +16,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { ErrorInterceptor } from './error-interceptor';
 import { ErrorComponent } from './error/error.component';
+import { AngularMaterialModule } from './angular-material.module';
 
 
 
@@ -46,19 +35,9 @@ import { ErrorComponent } from './error/error.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatCardModule,
-    MatTableModule,
-    MatFormFieldModule ,
-    MatInputModule,
-    MatExpansionModule,
+    BrowserAnimationsModule, 
     HttpClientModule,
-    MatProgressSpinnerModule,
-    MatPaginatorModule,
-    MatDialogModule,
-    MatToolbarModule
+    AngularMaterialModule   
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
