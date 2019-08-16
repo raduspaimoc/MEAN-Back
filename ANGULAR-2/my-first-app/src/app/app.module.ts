@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-//import { FormsModule} from '@angular/forms'
+import { FormsModule} from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
@@ -15,11 +15,11 @@ import { WarningAlertComponent } from './warning-alert/warning-alert.component';
     ServerComponent,
     ServersComponent,
     WarningAlertComponent,
-    SuccessAlertComponent
+    SuccessAlertComponent,
   ],
   imports: [
     BrowserModule,
-    //FormsModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
