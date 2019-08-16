@@ -10,5 +10,14 @@ import { Component } from '@angular/core';
   }`]*/
 })
 export class AppComponent {
-  username = 'Marsupialin';
+  // Assignments 2 and 3
+  
+  //username = 'Marsupialin';
+  /*showSecret = false;
+  log = [];
+
+  onToggleDetails(){
+    this.showSecret = !this.showSecret;
+    this.log.push(this.log.length + 1);
+  }*/
 }
